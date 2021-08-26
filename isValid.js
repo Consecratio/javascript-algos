@@ -16,7 +16,15 @@ More concretely, you can look at an Operational Transformation as a function tha
 */
 
 function isValid(stale, latest, otjson) {
-    // this is the part you will write!
+    // take the otjson and change it to an array of objects
+    let regExp = /\[(.*?)\]/
+    let matches = regExp.exec(otjson)
+    console.log(matches[0]) // shows the array extracted using the regEx
+    // console.log(otjson.split('}, {'))
+
+
+    // iterate through the array of objects
+    // execute each 'op' in the array of objects
 }
 
 
