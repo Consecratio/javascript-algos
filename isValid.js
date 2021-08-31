@@ -19,7 +19,7 @@ function isValid(stale, latest, otjson) {
     // take the otjson and change it to an array of objects
     let regExp = /\[(.*?)\]/
     let matches = regExp.exec(otjson)
-    let newArr = [matches[0]]
+    let newArr = Array(matches[0])
     // console.log(matches[0]) // shows the array extracted using the regEx
     // console.log(otjson.split('}, {'))
 
