@@ -16,13 +16,24 @@ The fibonacci sequence works as follows:
     [1, 1, 2, 3, 5, 6, 13, 21, 34, 55]
 
 Params:
-1 <= n <= 100
+1 <= n <= 50
 
 */
 
-const fib = (n) => {}
+const fib = (n, memo = {}) => {
+    // base case
+    if(n in memo) {
+        return memo[`${n}`]
+    } else if (n <= 2) {
+        return 1
+    }
+
+    memo[`${n}`] = fib(n - 2, memo) + fib(n - 1, memo)
+
+    return memo[`${n}`]
+}
 
 console.log(fib(3))
 console.log(fib(4))
 console.log(fib(8))
-console.log(fib(100))
+console.log(fib(50))
